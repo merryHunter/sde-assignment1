@@ -1,0 +1,222 @@
+<people>
+    <person id="0001">
+        <firstname>Bond R.</firstname>
+        <lastname>Martin</lastname>
+        <birthdate>1984-09-20</birthdate>
+        <activitypreference id="100">
+            <name>Running</name>
+            <description>Running to the Park</description>
+            <place>Gocciadoro</place>
+            <startdate>2017-10-13T11:50:00.0</startdate>
+        </activitypreference>
+    </person>
+    <person id="0002">
+        <firstname>Petro.</firstname>
+        <lastname>Kozak</lastname>
+        <birthdate>1995-07-02</birthdate>
+        <activitypreference id="101">
+            <name>Swimming</name>
+            <description>Swimming in a pool</description>
+            <place>Poolnumber1</place>
+            <startdate>2016-11-13T11:50:00.0</startdate>
+        </activitypreference>
+    </person>
+    <person id="0003">
+        <firstname>Dmytro.</firstname>
+        <lastname>Koval</lastname>
+        <birthdate>1994-12-16</birthdate>
+        <activitypreference id="102">
+            <name>Snowboarding</name>
+            <description>Snowboarding at Alpines Dolomiti</description>
+            <place>Ski center Latemar</place>
+            <startdate>2016-01-10T11:50:00.0</startdate>
+        </activitypreference>
+    </person>
+    <person id="0004">
+        <firstname>Vlad</firstname>
+        <lastname>Kostynskyi</lastname>
+        <birthdate>1994-04-19</birthdate>
+        <activitypreference id="103">
+            <name>Hunting</name>
+            <description>Hunting at Chernigivska region</description>
+            <place>Koriukivka</place>
+            <startdate>2015-03-16T10:50:00.0</startdate>
+        </activitypreference>
+    </person>
+    <person id="5">
+        <firstname>Ivan</firstname>
+        <lastname>Novak</lastname>
+        <birthdate>1996-07-03</birthdate>
+        <activitypreference id="103">
+            <name>Hunting</name>
+            <description>Hunting at Chernigivska region</description>
+            <place>Koriukivka</place>
+            <startdate>2014-01-11T04:50:00.0</startdate>
+        </activitypreference>
+    </person>
+   <person id="0006">
+        <firstname>Nikita</firstname>
+        <lastname>Moskal</lastname>
+        <birthdate>1992-11-29</birthdate>
+        <activitypreference id="102">
+            <name>Snowboarding</name>
+            <description>Snowboarding at Alpines Dolomiti</description>
+            <place>Ski center Latemar</place>
+            <startdate>2016-01-10T11:50:00.0</startdate>
+        </activitypreference>
+    </person>
+   <person id="0007">
+        <firstname>Roman</firstname>
+        <lastname>Bondarenko</lastname>
+        <birthdate>1993-08-21</birthdate>
+        <activitypreference id="104">
+            <name>Volleyball</name>
+            <description>Volleyball with other guys</description>
+            <place>Palestra Gialla</place>
+            <startdate>2017-11-30T18:50:00.0</startdate>
+        </activitypreference>
+    </person>    
+    <person id="0008">
+        <firstname>Igor</firstname>
+        <lastname>Panchenko</lastname>
+        <birthdate>1990-03-09</birthdate>
+        <activitypreference id="100">
+            <name>Running</name>
+            <description>Running to the Park</description>
+            <place>Gocciadoro</place>
+            <startdate>2017-10-13T11:50:00.0</startdate>
+        </activitypreference>
+    </person>  
+    <person id="0009">
+        <firstname>Igor</firstname>
+        <lastname>Titov</lastname>
+        <birthdate>1995-07-07</birthdate>
+        <activitypreference id="102">
+            <name>Snowboarding</name>
+            <description>Snowboarding at Alpines Dolomiti</description>
+            <place>Ski center Latemar</place>
+            <startdate>2016-02-01T11:50:00.0</startdate>
+        </activitypreference>
+    </person>  
+    <person id="0010">
+        <firstname>Illya</firstname>
+        <lastname>Titov</lastname>
+        <birthdate>1994-07-17</birthdate>
+        <activitypreference id="100">
+            <name>Running</name>
+            <description>Running to the Park</description>
+            <place>Gocciadoro</place>
+            <startdate>2017-10-13T11:50:00.0</startdate>
+        </activitypreference>
+    </person>  
+    <person id="0011">
+        <firstname>James</firstname>
+        <lastname>Smith</lastname>
+        <birthdate>1981-09-01</birthdate>
+        <activitypreference id="105">
+            <name>Biatlon</name>
+            <description>Famous sport</description>
+            <place>Ruppendolf</place>
+            <startdate>2010-05-11T17:30:00.0</startdate>
+        </activitypreference>
+    </person>
+    <person id="0012">
+        <firstname>Stas</firstname>
+        <lastname>Ostapenko</lastname>
+        <birthdate>1983-09-18</birthdate>
+        <activitypreference id="101">
+            <name>Swimming</name>
+            <description>Swimming in a pool</description>
+            <place>Poolnumber1</place>
+            <startdate>2015-11-13T11:50:00.0</startdate>
+        </activitypreference>
+    </person>
+    <person id="0013">
+        <firstname>Sergii</firstname>
+        <lastname>Koval</lastname>
+        <birthdate>1994-12-16</birthdate>
+        <activitypreference id="102">
+            <name>Snowboarding</name>
+            <description>Snowboarding at Alpines Dolomiti</description>
+            <place>Ski center Latemar</place>
+            <startdate>2016-01-10T11:50:00.0</startdate>
+        </activitypreference>
+    </person>
+    <person id="0014">
+        <firstname>Artem</firstname>
+        <lastname>Tsushko</lastname>
+        <birthdate>1995-02-13</birthdate>
+        <activitypreference id="103">
+            <name>Hunting</name>
+            <description>Hunting at Chernigivska region</description>
+            <place>Koriukivka</place>
+            <startdate>2014-04-24T11:50:00.0</startdate>
+        </activitypreference>
+    </person>
+    <person id="0015">
+        <firstname>Feder</firstname>
+        <lastname>Romanenko</lastname>
+        <birthdate>1998-10-04</birthdate>
+        <activitypreference id="106">
+            <name>Cybersport</name>
+            <description>DOTA2 championships</description>
+            <place>World</place>
+            <startdate>2004-06-06T04:50:00.0</startdate>
+        </activitypreference>
+    </person>
+   <person id="0016">
+        <firstname>Andrii</firstname>
+        <lastname>Kozhukh</lastname>
+        <birthdate>1991-01-23</birthdate>
+        <activitypreference id="102">
+            <name>Snowboarding</name>
+            <description>Snowboarding at Alpines Dolomiti</description>
+            <place>Ski center Latemar</place>
+            <startdate>2016-01-10T11:50:00.0</startdate>
+        </activitypreference>
+    </person>
+   <person id="0017">
+        <firstname>Stepan</firstname>
+        <lastname>Lugan</lastname>
+        <birthdate>1983-09-11</birthdate>
+        <activitypreference id="105">
+            <name>Volleyball</name>
+            <description>Volleyball with other guys</description>
+            <place>Palestra Gialla</place>
+            <startdate>2017-11-30T18:50:00.0</startdate>
+        </activitypreference>
+    </person>    
+    <person id="0018">
+        <firstname>Vanya</firstname>
+        <lastname>Shevchuk</lastname>
+        <birthdate>1992-02-02</birthdate>
+        <activitypreference id="100">
+            <name>Running</name>
+            <description>Running to the Park</description>
+            <place>Gocciadoro</place>
+            <startdate>2017-10-13T11:50:00.0</startdate>
+        </activitypreference>
+    </person>  
+    <person id="0019">
+        <firstname>Vova</firstname>
+        <lastname>Sachenko</lastname>
+        <birthdate>1995-04-07</birthdate>
+        <activitypreference id="102">
+            <name>Snowboarding</name>
+            <description>Snowboarding at Alpines Dolomiti</description>
+            <place>Ski center Latemar</place>
+            <startdate>2016-02-01T11:50:00.0</startdate>
+        </activitypreference>
+    </person>  
+    <person id="0020">
+        <firstname>Mikola</firstname>
+        <lastname>Mikolov</lastname>
+        <birthdate>1994-09-09</birthdate>
+        <activitypreference id="102">
+            <name>Snowboarding</name>
+            <description>Snowboarding at Alpines Dolomiti</description>
+            <place>Ski center Latemar</place>
+            <startdate>2016-02-01T11:50:00.0</startdate>
+        </activitypreference>
+    </person>  
+</people>
