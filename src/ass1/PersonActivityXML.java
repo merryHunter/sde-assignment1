@@ -1,5 +1,9 @@
 package ass1;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -12,6 +16,7 @@ import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
 public class PersonActivityXML {
@@ -45,7 +50,7 @@ public class PersonActivityXML {
 			
 			XPath xpath = XPathFactory.newInstance().newXPath();
 			System.out.println("Reading person info...");
-			System.out.println("(using xpath = /people/person/id/text()");
+//			System.out.println("(using xpath = /people/person/id/text()");
 			XPathExpression expr = xpath.compile("/people/person[@id='" + 
 								Integer.toString(id) + 
 								"']/activitypreference/description/text()");
@@ -76,7 +81,7 @@ public class PersonActivityXML {
 			
 			XPath xpath = XPathFactory.newInstance().newXPath();
 			System.out.println("Reading person info...");
-			System.out.println("(using xpath = /people/person/id/text()");
+//			System.out.println("(using xpath = /people/person/id/text()");
 			XPathExpression expr = xpath.compile("/people/person[@id='" + 
 								Integer.toString(id) + 
 								"']/activitypreference/place/text()");
@@ -93,17 +98,96 @@ public class PersonActivityXML {
 		return resultPlace;
 	}
 	
+	
+	/**
+	 *  Print all info about all people in the xml.
+	 */
 	public static void printAllPeople() {
 		try {
 			builder = domFactory.newDocumentBuilder();
 			System.out.println("Loading " + xmlPath);
 			Document doc = builder.parse(xmlPath);
 			
-			XPathExpression xp = XPathFactory.newInstance().newXPath().compile("//*");
+			XPathExpression xp = XPathFactory.newInstance().newXPath().compile("//*/text()");
 			NodeList nodes = (NodeList) xp.evaluate(doc, XPathConstants.NODESET);
 			for (int i = 0; i < nodes.getLength(); i++) {
 				System.out.println(nodes.item(i).getNodeValue());
 			}
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	/**
+	 * Print all Activity preference info of a person with a given id parameter.
+	 * @param id
+	 */
+	public static void printActivityPreferenceByPersonId(int id) {
+		try {
+			builder = domFactory.newDocumentBuilder();
+			System.out.println("Loading " + xmlPath);
+			Document doc = builder.parse(xmlPath);
+			
+			XPath xpath = XPathFactory.newInstance().newXPath();
+			System.out.println("Reading person info...");
+//			System.out.println("(using xpath = /people/person/id/text()");
+			XPathExpression expr = xpath.compile("/people/person[@id='" + 
+								Integer.toString(id) + 
+								"']/activitypreference/*/node()");
+	
+			Object result = expr.evaluate(doc, XPathConstants.NODESET);
+			NodeList nodes = (NodeList) result;
+			System.out.println("Activity prefence info:");
+			for (int i = 0; i < nodes.getLength(); i++) {
+				System.out.println(nodes.item(i).getNodeName() + ":" + nodes.item(i).getNodeValue());
+			}
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	/**
+	 * 
+	 * @param startdate
+	 * @param operator
+	 */
+	public static void printPeopleFilteredByDate(String startdate, String operator) {
+		try {
+			builder = domFactory.newDocumentBuilder();
+			System.out.println("Loading " + xmlPath);
+			Document doc = builder.parse(xmlPath);
+			
+			XPath xpath = XPathFactory.newInstance().newXPath();
+			System.out.println("Reading person info...");
+//			System.out.println("(using xpath = /people/person/id/text()");
+//			XPathExpression expr = xpath.compile("//people/person/activitypreference[startdate " +
+//								operator +  " " +
+//								startdate + "]/*"
+//								);
+			XPathExpression expr = xpath.compile("//people/person/activitypreference/startdate"
+					);
+			Object result = expr.evaluate(doc, XPathConstants.NODESET);
+			NodeList nodes = (NodeList) result;
+			
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			
+			for (int i = 0; i < nodes.getLength(); i++) {
+			  Node validToNode = nodes.item(i);
+			  Date validTo = df.parse(validToNode.getTextContent());
+			  if (validTo.compareTo(df.parse(startdate)) < 0) {
+			    Node personNode = validToNode.getPreviousSibling();
+			    
+					System.out.println(personNode.getAttributes() + ":" + personNode.getNodeValue());
+				
+			  }
+			}
+			
+	
+//			for (int i = 0; i < nodes.getLength(); i++) {
+//				System.out.println(nodes.item(i).getNodeName() + ":" + nodes.item(i).getNodeValue());
+//			}
 		}
 		catch(Exception e){
 			System.out.println(e.getMessage());
@@ -117,7 +201,9 @@ public class PersonActivityXML {
 						 getActivityDescription(personId));
 		System.out.println("Activity place for user with id=" + Integer.toString(personId) + ":\n" +
 				 getActivityPlace(personId));
-		printAllPeople();
+//		printAllPeople();
+//		printActivityPreferenceByPersonId(5);
+		printPeopleFilteredByDate("2017-13-10", "<");
 		
 	}
 	
