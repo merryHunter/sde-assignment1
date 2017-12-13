@@ -100,7 +100,7 @@
 	<target name="generate" depends="init">
 		<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask" classpathref="lib.path.id">
 		</taskdef>
-		<xjc schema="persons.xsd" destdir="${src.dir}" package="${xjc.package}" />
+		<xjc schema="people.xsd" destdir="${src.dir}" package="${xjc.package}" />
 	</target>
 
 	<target name="compile" depends="init, generate">
@@ -115,7 +115,7 @@
 	</target>
 	<target name="execute.JAXBMarshaller">
 			<echo message="Executing JAXBMarshaller" />
-			<java classname="JAXBMarshaller" classpath="${build.dir}">
+			<java classname="ass1.JAXBMarshaller" classpath="${build.dir}">
 				<classpath>
 					<fileset dir="${lib.dir}">
 						<include name="**/*.jar" />
