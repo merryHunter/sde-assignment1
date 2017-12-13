@@ -115,7 +115,7 @@
 	</target>
 	<target name="execute.JAXBMarshaller">
 			<echo message="Executing JAXBMarshaller" />
-			<java classname="ass1.JAXBMarshaller" classpath="${build.dir}">
+			<java classname="ass1.JAXBMarshallerPerson" classpath="${build.dir}">
 				<classpath>
 					<fileset dir="${lib.dir}">
 						<include name="**/*.jar" />
@@ -127,7 +127,7 @@
 
 		<target name="execute.JAXBUnMarshaller">
 			<echo message="Executing JAXBUnMarshaller" />
-			<java classname="JAXBUnMarshaller" classpath="${build.dir}">
+			<java classname="ass1.JAXBUnMarshallerPerson" classpath="${build.dir}">
 				<classpath>
 					<fileset dir="${lib.dir}">
 						<include name="**/*.jar" />
@@ -136,5 +136,44 @@
 				</classpath>
 			</java>
 		</target>
+		<target name="execute.JsonMarshaller">
+			<echo message="Executing JsonMarshallerPersons" />
+			<java classname="ass1.JsonMarshallerPersons" classpath="${build.dir}">
+				<classpath>
+					<fileset dir="${lib.dir}">
+						<include name="**/*.jar" />
+						<include name="*.jar" />
+					</fileset>
+				</classpath>
+			</java>
+		</target>
+		<target name="execute.task1">
+			<echo message="Task 1. Print all people." />
+			<java classname="ass1.PersonActivityXML" classpath="${build.dir}">
+            	<arg value="printAllPeople" />
+			</java>
+		</target>
+		<target name="execute.task2">
+			<echo message="Task 2. Print activity preference for a person with id = 5." />
+			<java classname="ass1.PersonActivityXML" classpath="${build.dir}">
+            	<arg value="activityPreference" />
+            	<arg value="5" />
+			</java>
+		</target>
+
+
+	 <target name="execute.evaluation" depends="compile, generate">
+        	<echo message="Executing tasks 1,2,4,5,6. Skip task3."/>
+		 <echo message="Executing tasks 1."/>
+        	<ant target="execute.task1"></ant>
+		 <echo message="Executing tasks 2."/>
+        	<ant target="execute.task2"></ant>
+		 <echo message="Executing tasks 4."/>
+        	<ant target="execute.JAXBMarshaller"></ant> <!-- task 4-->
+		 <echo message="Executing tasks 5."/>
+        	<ant target="execute.JAXBUnMarshaller"></ant> <!-- task 5 -->
+		 <echo message="Executing tasks 6."/>
+        	<ant target="execute.JsonMarshaller"></ant> <!-- task 6 -->
+	</target>
 
 </project>

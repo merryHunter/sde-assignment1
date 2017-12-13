@@ -19,7 +19,7 @@
    <xsd:element name="name" type="xsd:string"></xsd:element>
    <xsd:element name="description" type="xsd:string"></xsd:element>
    <xsd:element name="place" type="xsd:string"></xsd:element>
-   <xsd:element name="startdate" type="xsd:dateTime"></xsd:element>
+   <xsd:element name="startdate" type="xsd:string"></xsd:element>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:element name="person" type="personType"/>

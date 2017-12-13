@@ -23,7 +23,7 @@ public class JAXBMarshallerPerson {
 	            
 	            PeopleList peopleList = factory.createPeopleList();
 	            
-	            peopleList = JAXBMarshallerPerson.populateSamplePersons(peopleList);           
+	            peopleList = JAXBMarshallerPerson.populateSamplePersons(factory, peopleList);           
 	        	
 	            JAXBElement<PeopleList> peopleElement = factory.createPeople(peopleList);
 	            marshaller.marshal(peopleElement,
@@ -37,7 +37,8 @@ public class JAXBMarshallerPerson {
 
 	    } 
 
-	public static PeopleList populateSamplePersons(PeopleList peopleList) {
+	public static PeopleList populateSamplePersons(ObjectFactory factory, PeopleList peopleList) 
+									throws DatatypeConfigurationException{
 		// person 1
         ActivityPreference pref = factory.createActivityPreference();
     	pref.setDescription("Hunting on bears in a forest.");
@@ -84,6 +85,8 @@ public class JAXBMarshallerPerson {
     	person.setBirthdate( DatatypeFactory.newInstance()
                 .newXMLGregorianCalendar(new GregorianCalendar(1995, 11, 11)));
     	peopleList.getPerson().add(person);
+    	
+    	return peopleList;
 	}
 	 
     public static void main(String[] argv) {

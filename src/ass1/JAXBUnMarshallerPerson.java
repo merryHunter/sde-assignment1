@@ -31,6 +31,7 @@ public class JAXBUnMarshallerPerson {
 
             List<PersonType> peopleList = people.getPerson();
             for (int i = 0; i < peopleList.size(); i++) {
+            	System.out.println(">>>");
                 PersonType person = (PersonType) peopleList.get(i);
                 System.out.println("Name: " + person.getFirstname() + " " + person.getLastname());
                 System.out.println("Birth date: " + person.getBirthdate());
@@ -39,7 +40,7 @@ public class JAXBUnMarshallerPerson {
                 System.out.println("Description: " + person.getActivitypreference().getDescription());
                 System.out.println("Place: " + person.getActivitypreference().getPlace());
                 System.out.println("Start date: " + person.getActivitypreference().getStartdate());
-                System.out.println(">>>");
+                
             }
         } catch (JAXBException e) {
             System.out.println(e.toString());

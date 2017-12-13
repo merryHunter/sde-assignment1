@@ -23,7 +23,7 @@ public class JsonMarshallerPersons {
 	        ObjectFactory factory = new ObjectFactory();
 	        PeopleList peopleList = factory.createPeopleList();
 
-	        peopleList = JAXBMarshallerPerson.populateSamplePersons(peopleList);   
+	        peopleList = JAXBMarshallerPerson.populateSamplePersons(factory, peopleList);   
 	        
 	        // Jackson Object Mapper
 	        ObjectMapper mapper = new ObjectMapper();

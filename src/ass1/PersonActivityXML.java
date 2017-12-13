@@ -111,7 +111,8 @@ public class PersonActivityXML {
 			XPathExpression xp = XPathFactory.newInstance().newXPath().compile("//*/text()");
 			NodeList nodes = (NodeList) xp.evaluate(doc, XPathConstants.NODESET);
 			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeValue());
+				String value = nodes.item(i).getNodeValue();
+				if (value.length() > 10) System.out.println(value);
 			}
 		}
 		catch(Exception e){
@@ -178,7 +179,7 @@ public class PersonActivityXML {
 			  Date validTo = df.parse(validToNode.getTextContent());
 			  if (validTo.compareTo(df.parse(startdate)) < 0) {
 			    Node personNode = validToNode.getPreviousSibling();
-			    
+			    	
 					System.out.println(personNode.getAttributes() + ":" + personNode.getNodeValue());
 				
 			  }
@@ -196,15 +197,26 @@ public class PersonActivityXML {
 	
 	public static void main(String[] args)
 			throws ParserConfigurationException, SAXException, IOException, XPathExpressionException  {
-		int personId = 5;
-		System.out.println("Activity for user with id=" + Integer.toString(personId) + ":\n" +
-						 getActivityDescription(personId));
-		System.out.println("Activity place for user with id=" + Integer.toString(personId) + ":\n" +
-				 getActivityPlace(personId));
+//		int personId = 5;
+//		System.out.println("Activity for user with id=" + Integer.toString(personId) + ":\n" +
+//						 getActivityDescription(personId));
+//		System.out.println("Activity place for user with id=" + Integer.toString(personId) + ":\n" +
+//				 getActivityPlace(personId));
 //		printAllPeople();
 //		printActivityPreferenceByPersonId(5);
-		printPeopleFilteredByDate("2017-13-10", "<");
 		
-	}
+		 switch (args[0]) { //treat first argument as a command (since Ant doesn't allow to exectute methods of classes directly)
+         case "printAllPeople":
+        	 printAllPeople();
+             break;
+         case "activityPreference":
+        	 printActivityPreferenceByPersonId(Integer.parseInt(args[1]));
+         	 break;
+         default:
+             System.out.println("No such command");
+     }
+}
+		
+	
 	
 }
