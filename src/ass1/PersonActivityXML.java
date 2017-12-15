@@ -108,12 +108,9 @@ public class PersonActivityXML {
 			System.out.println("Loading " + xmlPath);
 			Document doc = builder.parse(xmlPath);
 			
-			XPathExpression xp = XPathFactory.newInstance().newXPath().compile("//*/text()");
-			NodeList nodes = (NodeList) xp.evaluate(doc, XPathConstants.NODESET);
-			for (int i = 0; i < nodes.getLength(); i++) {
-				String value = nodes.item(i).getNodeValue();
-				if (value.length() > 10) System.out.println(value);
-			}
+			XPathExpression expr = XPathFactory.newInstance().newXPath().compile("/people"); 
+	        Node node = (Node) expr.evaluate(doc, XPathConstants.NODE);
+	        System.out.println(node.getTextContent());
 		}
 		catch(Exception e){
 			System.out.println(e.getMessage());
@@ -133,16 +130,18 @@ public class PersonActivityXML {
 			XPath xpath = XPathFactory.newInstance().newXPath();
 			System.out.println("Reading person info...");
 //			System.out.println("(using xpath = /people/person/id/text()");
-			XPathExpression expr = xpath.compile("/people/person[@id='" + 
-								Integer.toString(id) + 
-								"']/activitypreference/*/node()");
-	
-			Object result = expr.evaluate(doc, XPathConstants.NODESET);
-			NodeList nodes = (NodeList) result;
+//			XPathExpression expr = xpath.compile("/people/person[@id='" + 
+//								Integer.toString(id) + 
+//								"']/activitypreference/*/node()");
+			System.out.println(id);
+			XPathExpression expr = xpath.compile("/people/person['" + Integer.toString(id) + "']");
+			Node result = (Node)expr.evaluate(doc, XPathConstants.NODE);
+//			NodeList nodes = (NodeList) result;
 			System.out.println("Activity prefence info:");
-			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeName() + ":" + nodes.item(i).getNodeValue());
-			}
+//			for (int i = 0; i < nodes.getLength(); i++) {
+//				System.out.println(nodes.item(i).getNodeName() + ":" + nodes.item(i).getNodeValue());
+//			}
+			System.out.println(result.getChildNodes().item(7).getTextContent());
 		}
 		catch(Exception e){
 			System.out.println(e.getMessage());
